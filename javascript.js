@@ -31,6 +31,7 @@ document.addEventListener('keydown', function(event) {
       //reset de achtergrond weer en de gif
       setTimeout(() => {
         changeBackground("white");
+        //img terug naar orgineel is met behulp van blackbox gedaan prompt die gebruikt was: ik wil me gif weer terug naar orgineel krijgen
         coinImage.src = originalSrc;
       }, 1500);
     }
