@@ -1,0 +1,20 @@
+button{
+    justify-content: center;
+    display: flex;
+    margin-left: 50%;
+}
+h1{
+    margin-left: 50%;
+}
+
+.flip{
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    height: 40%;
+    display: block;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
+}
