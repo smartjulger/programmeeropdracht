@@ -1,44 +1,53 @@
-let button = document.getElementById("myButton");
+let kopCount = 0;
+    let muntCount = 0;
+    let button = document.getElementById("myButton");
 
-// Keystroke event listener
-document.addEventListener('keydown', function(event) {
-  if (event.key === 'a') { 
-    simulateButtonClick();
-  }
-});
+    // Keystroke event listener
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'a') { 
+        simulateButtonClick();
+      }
+    });
 
-button.addEventListener('click', function() {
-  simulateButtonClick();
-});
+    button.addEventListener('click', function() {
+      simulateButtonClick();
+    });
 
-function simulateButtonClick() {
-  const result = Math.random() >= 0.5 ? "hoofd" : "munt";
-  document.getElementById("result").innerHTML = result;
+    function simulateButtonClick() {
+      let result;
+      if (Math.random() >= 0.5) {
+          result = "kop";
+      } else {
+          result = "munt";
+      }
+      document.getElementById("result").innerHTML = result;
 
-  let coinImage = document.getElementById("coinFlip");
-  let originalSrc = coinImage.src;
+      let coinImage = document.getElementById("coinFlip");
+      let originalSrc = coinImage.src;
 
-  if (result === "hoofd") {
-    setTimeout(() => {
-      alert("je hebt hoofd opnieuw proberen?");
-    }, 1100);
-    coinImage.src = "img/coin-flip-flip.gif";
-    setTimeout(() => {
-      changeBackground("white");
-      coinImage.src = originalSrc;
-    }, 1500);
-  } else {
-    setTimeout(() => {
-      alert("je hebt munt opnieuw proberen?");
-    }, 1100);
-    coinImage.src = "img/coin-flip-flip.gif";
-    setTimeout(() => {
-      changeBackground("white");
-      coinImage.src = originalSrc;
-    }, 1500);
-  }
-}
+      if (result === "kop") {
+        kopCount++;
+        setTimeout(() => {
+          alert("je hebt kop opnieuw proberen?");
+        }, 1100);
+        coinImage.src = "img/coin-flip-flip.gif";
+        setTimeout(() => {
+          coinImage.src = originalSrc;
+        }, 1500);
+      } else {
+        muntCount++;
+        setTimeout(() => {
+          alert("je hebt munt opnieuw proberen?");
+        }, 1100);
+        coinImage.src = "img/coin-flip-flip.gif";
+        setTimeout(() => {
+          coinImage.src = originalSrc;
+        }, 1500);
+      }
 
-function changeBackground(color) {
-  document.body.style.background = color;
-}
+      updateTally();
+    }
+
+    function updateTally() {
+      document.getElementById("resultaten").innerHTML = `Kop: ${kopCount}, Munt: ${muntCount}`;
+    }

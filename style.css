@@ -12,6 +12,12 @@ h1{
     margin-left: 50%;
 }
 
+.result{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+}
+
 .flip{
 
     position: fixed;
