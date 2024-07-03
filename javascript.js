@@ -1,8 +1,8 @@
 let kopCount = 0;
 let muntCount = 0;
 let button = document.getElementById("myButton");
-const muntAudio = new Audio();
-const kopaudio = new Audio();
+const kop = new Audio("Audio/kop.mp3");
+const munt = new Audio("Audio/munt.mp3");
 
 button.addEventListener('click', function () {
   simulateButtonClick();
@@ -10,7 +10,7 @@ button.addEventListener('click', function () {
 
 function simulateButtonClick() {
   let result;
-  if (Math.random() >= 0.5) {
+  if (Math.random() >= 0.2) {
     result = "kop";
   } else {
     result = "munt";
@@ -43,26 +43,26 @@ function simulateButtonClick() {
   updateTally();
   checkCounts();
 }
+
 function updateTally() {
   document.getElementById("resultaten").innerHTML = `Kop: ${kopCount}, Munt: ${muntCount}`;
 }
-//vriend genaamd juup uitgelegd wat de functie doet en een voorbeeld gegeven in andere project.
+
 function checkCounts() {
   if (kopCount === 10) {
     document.body.style.backgroundColor = "lightblue";
-    kopaudio.play();
-    setTimeout(resetGame, 20000); // 
+    kop.play();
+    setTimeout(resetGame, 20000); 
   } else if (muntCount === 10) {
     document.body.style.backgroundColor = "lightgreen";
-    muntAudio.play(); 
-    setTimeout(resetGame, 20000); // 
+    munt.play();
+    setTimeout(resetGame, 20000); 
   }
 }
-
+// vriend genaamd juuo heeft geholpen met resetgame
 function resetGame() {
   kopCount = 0;
   muntCount = 0;
   document.getElementById("resultaten").innerHTML = "Kop: 0, Munt: 0";
-  document.body.style.backgroundColor = ""; // Reset de achtergrondkleur
+  document.body.style.backgroundColor = ""; // Reset the background color
 }
-//gemaakt met hulp van een vriend genaamd juup
