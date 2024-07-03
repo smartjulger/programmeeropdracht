@@ -1,6 +1,8 @@
 let kopCount = 0;
 let muntCount = 0;
 let button = document.getElementById("myButton");
+const muntAudio = new Audio();
+const kopaudio = new Audio();
 
 button.addEventListener('click', function () {
   simulateButtonClick();
@@ -41,17 +43,18 @@ function simulateButtonClick() {
   updateTally();
   checkCounts();
 }
-//vriend uitgelegd wat de functie doet en een voorbeeld gegeven in andere project.
 function updateTally() {
   document.getElementById("resultaten").innerHTML = `Kop: ${kopCount}, Munt: ${muntCount}`;
 }
-
+//vriend genaamd juup uitgelegd wat de functie doet en een voorbeeld gegeven in andere project.
 function checkCounts() {
   if (kopCount === 10) {
     document.body.style.backgroundColor = "lightblue";
+    kopaudio.play();
     setTimeout(resetGame, 20000); // 
   } else if (muntCount === 10) {
     document.body.style.backgroundColor = "lightgreen";
+    muntAudio.play(); 
     setTimeout(resetGame, 20000); // 
   }
 }
@@ -62,4 +65,4 @@ function resetGame() {
   document.getElementById("resultaten").innerHTML = "Kop: 0, Munt: 0";
   document.body.style.backgroundColor = ""; // Reset de achtergrondkleur
 }
-//gemaakt met hulp van een vriend.
+//gemaakt met hulp van een vriend genaamd juup
