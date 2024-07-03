@@ -1,8 +1,8 @@
 let kopCount = 0;
 let muntCount = 0;
 let button = document.getElementById("myButton");
-const kop = new Audio("Audio/kop.mp3");
-const munt = new Audio("Audio/munt.mp3");
+const kop = new Audio("audio/kop.mp3");
+const munt = new Audio("audio/munt.mp3");
 
 button.addEventListener('click', function () {
   simulateButtonClick();
@@ -10,7 +10,7 @@ button.addEventListener('click', function () {
 
 function simulateButtonClick() {
   let result;
-  if (Math.random() >= 0.2) {
+  if (Math.random() >= 0.5) {
     result = "kop";
   } else {
     result = "munt";
@@ -59,10 +59,11 @@ function checkCounts() {
     setTimeout(resetGame, 20000); 
   }
 }
-// vriend genaamd juuo heeft geholpen met resetgame
+// vriend genaamd juup heeft geholpen met resetgame
 function resetGame() {
   kopCount = 0;
   muntCount = 0;
   document.getElementById("resultaten").innerHTML = "Kop: 0, Munt: 0";
-  document.body.style.backgroundColor = ""; // Reset the background color
+  document.body.style.backgroundColor = ""; // 
 }
+// vriend genaamd juup heeft geholpen met resetgame
