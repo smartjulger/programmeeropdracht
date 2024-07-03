@@ -3,28 +3,38 @@
     margin: 0%;
     box-sizing: border-box;
 }
-button{
+
+button {
     justify-content: center;
     display: flex;
     margin-left: 50%;
 }
-h1{
-    margin-left: 50%;
-}
 
-.result{
-    position: fixed;
+h1 {
     display: flex;
     justify-content: center;
 }
 
-.flip{
+p{
+    display: flex;
+    margin: 1%;
+    justify-content: center;
+}
+
+.mybutton{
+    display: flex;
+    justify-content: center;
+    margin-top: 1%;
+}
+
+
+.flip {
 
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width:40%;
+    width: 40%;
     height: 50%;
     display: block;
 }
